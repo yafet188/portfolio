@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__framer__getNodeXml",
+      "mcp__claude_ai_Framer__getNodeXml",
+      "mcp__claude_ai_Framer__manageTextStyle",
+      "mcp__claude_ai_Framer__updateXmlForNode",
+      "mcp__claude_ai_Framer__searchFonts",
+      "mcp__claude_ai_Framer__getProjectWebsiteUrl",
+      "mcp__claude_ai_Framer__readCodeFile",
+      "mcp__claude_ai_Framer__getProjectXml",
+      "mcp__mcp-unframer-co__getProjectXml",
+      "mcp__mcp-unframer-co__getNodeXml",
+      "mcp__mcp-unframer-co__readCodeFile",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5175/)",
+      "mcp__mcp-unframer-co__getProjectWebsiteUrl",
+      "Bash(git init *)",
+      "Bash(git remote *)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "framer"
+  ]
+}
