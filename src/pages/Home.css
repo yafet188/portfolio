@@ -1,0 +1,439 @@
+.home {
+  background: var(--color-black);
+  min-height: 100vh;
+}
+
+/* ── HERO ──────────────────────────────────────────── */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px 120px; /* ← bottom padding keeps photo from clipping */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(240, 240, 240, 0.45);
+  margin-bottom: 8px;
+}
+
+.hero__name-wrap {
+  width: 100%;
+  overflow: visible; /* ← photo can now scale freely on hover */
+  padding: 35px 0 35px; /* ← extra bottom breathing room */
+  position: relative;
+}
+
+.hero__name-parallax {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+.hero__name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.hero__name-line {
+  font-family: var(--font-heading);
+  font-size: clamp(80px, 18vw, 260px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--color-vivid);
+  display: block;
+  transform: scaleX(0.82);
+}
+
+.hero__name-line--chars {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-bottom: 0.05em;
+}
+
+.hero__name-char {
+  display: inline-block;
+}
+
+.hero__name-line--offset {
+  color: var(--color-vivid);
+  font-size: clamp(64px, 14vw, 200px);
+  letter-spacing: 0.04em;
+  transform: scaleX(0.82);
+}
+
+.hero__inner {
+  display: contents;
+}
+
+.hero__photo-parallax {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* CSS individual translate keeps framer-motion's x/y (transform) separate */
+  translate: -50% -50%;
+  z-index: 2;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.hero__photo {
+  width: clamp(200px, 14.67vw, 176px);
+  height: clamp(295px, 23.33vw, 280px);
+  border-radius: 999px;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero__photo-parallax:hover .hero__photo {
+  transform: scale(1.4);
+}
+
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  transform: scale(1.3);
+}
+
+.hero__bio {
+  font-family: var(--font-serif);
+  font-size: clamp(15px, 2vw, 20px);
+  font-weight: 700;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.7);
+  max-width: 480px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.hero__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 44px;
+}
+
+.hero__scroll-bar {
+  width: 3px;
+  height: 34px;
+  background: rgba(240, 240, 240, 0.2);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: var(--color-vivid);
+  border-radius: 2px;
+  animation: scrollPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%   { top: 0;    opacity: 1; }
+  80%  { top: 20px; opacity: 0.3; }
+  100% { top: 0;    opacity: 1; }
+}
+
+.hero__scroll-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(240, 240, 240, 0.4);
+}
+
+/* ── TICKER ────────────────────────────────────────── */
+.home__ticker {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── SHARED SECTION ────────────────────────────────── */
+.home__section {
+  width: 77%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Contact wrap matches home section width */
+.home__contact-wrap {
+  width: 77%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── PROJECTS subtitle ─────────────────────────────── */
+.home__projects-sub {
+  font-family: var(--font-body);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+/* ── EXPERIENCE ────────────────────────────────────── */
+.home-exp__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+}
+
+.home-exp__sublabel {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: rgba(240, 240, 240, 0.65);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+  margin-bottom: -16px;
+}
+
+.home-exp__sublabel::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(240, 240, 240, 0.08);
+}
+
+.home-exp__featured {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-exp__img-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 14px;
+}
+
+.home-exp__img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-exp__img-accent {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 9px;
+  left: 7px;
+  border-radius: 8px;
+  z-index: 0;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.home-exp__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.home-exp__company {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(240, 240, 240, 0.92);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-exp__company--vivid {
+  color: var(--color-vivid);
+}
+
+a.home-exp__company {
+  transition: opacity 0.2s;
+}
+a.home-exp__company:hover { opacity: 0.7; }
+
+a.home-exp__img-wrap {
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+a.home-exp__img-wrap:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+a.home-exp__img-wrap:hover .home-exp__img-accent {
+  transform: translate(3px, 3px);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.home-exp__period {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(240, 240, 240, 0.4);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.home-exp__role {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.2;
+}
+
+.home-exp__role--vivid {
+  color: var(--color-vivid);
+}
+
+.home-exp__desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(240, 240, 240, 0.45);
+}
+
+.home-exp__bottom {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.home-exp__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-exp__separator {
+  width: 2px;
+  height: 331px;
+  background: rgb(240, 240, 240);
+  border-radius: 105px;
+  opacity: 0.29;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+/* ── PROJECTS ──────────────────────────────────────── */
+.home-proj__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* ── ABOUT ─────────────────────────────────────────── */
+.home-about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+}
+
+.home-about__bio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-about__bio-large {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.home-about__bio-small {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: rgba(240, 240, 240, 0.55);
+}
+
+.home-about__courses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.home-about__col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Course cards (shared between Home and About page) */
+.course-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border: 1px solid rgba(240, 240, 240, 0.1);
+  border-radius: 8px;
+  background: rgb(12, 12, 12);
+  position: sticky;
+  top: 120px;
+  transition: border-color 0.2s;
+}
+.course-card:hover { border-color: rgba(240, 240, 240, 0.18); }
+
+.course-card__code {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-vivid);
+  min-width: 36px;
+}
+
+.course-card__name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(240, 240, 240, 0.7);
+  flex: 1;
+}
+
+.course-card__grade {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 720px) {
+  .home__section          { width: 100%; padding: 0 20px; }
+  .home-about__courses    { grid-template-columns: 1fr; }
+  .home-proj__grid        { grid-template-columns: 1fr; }
+  .home-exp__bottom       { flex-direction: column; gap: 48px; }
+  .home-exp__separator    { display: none; }
+}
