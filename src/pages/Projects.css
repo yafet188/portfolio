@@ -1,0 +1,13 @@
+.projects-page {
+  width: 75%;
+}
+
+.projects-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .projects-page__grid { grid-template-columns: 1fr; }
+}
