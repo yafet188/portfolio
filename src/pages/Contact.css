@@ -1,0 +1,79 @@
+.contact-page__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: start;
+}
+.contact-page__left { display: flex; flex-direction: column; gap: 32px; }
+.contact-page__blurb {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(240,240,240,0.65);
+}
+.contact-page__details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact-page__details span,
+.contact-page__details a {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(240,240,240,0.55);
+  transition: color 0.2s;
+}
+.contact-page__details a:hover { color: var(--color-vivid); }
+.contact-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-page__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.contact-page__field { display: flex; flex-direction: column; gap: 8px; }
+.contact-page__field label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(240,240,240,0.4);
+}
+.contact-page__field input,
+.contact-page__field textarea {
+  background: rgba(240,240,240,0.04);
+  border: 1px solid rgba(240,240,240,0.1);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-white);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+.contact-page__field input:focus,
+.contact-page__field textarea:focus { border-color: var(--color-vivid); }
+.contact-page__field input::placeholder,
+.contact-page__field textarea::placeholder { color: rgba(240,240,240,0.2); }
+.contact-page__submit {
+  width: 100%;
+  height: 55px;
+  background: var(--color-vivid);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-radius: 8px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.contact-page__submit:hover { opacity: 0.85; transform: translateY(-1px); }
+
+@media (max-width: 720px) {
+  .contact-page__grid { grid-template-columns: 1fr; }
+  .contact-page__row  { grid-template-columns: 1fr; }
+}
